@@ -21,6 +21,11 @@ class CreditCardRegisterModel
   TextEditingController? textController2;
   final textFieldMask2 = MaskTextInputFormatter(mask: '#### #### #### ####');
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
+  TextEditingController? textController3;
+  final textFieldMask3 = MaskTextInputFormatter(mask: '##/##');
+  String? Function(BuildContext, String?)? textController3Validator;
 
   @override
   void initState(BuildContext context) {
@@ -36,5 +41,8 @@ class CreditCardRegisterModel
 
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
+    textFieldFocusNode3?.dispose();
+    textController3?.dispose();
   }
 }
