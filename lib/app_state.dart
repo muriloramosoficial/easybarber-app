@@ -55,4 +55,28 @@ class FFAppState extends ChangeNotifier {
   set CardTransation(bool value) {
     _CardTransation = value;
   }
+
+  int _pinCodeLogin1 = 0;
+  int get pinCodeLogin1 => _pinCodeLogin1;
+  set pinCodeLogin1(int value) {
+    _pinCodeLogin1 = value;
+  }
+
+  int _pinCodeLogin2 = 0;
+  int get pinCodeLogin2 => _pinCodeLogin2;
+  set pinCodeLogin2(int value) {
+    _pinCodeLogin2 = value;
+  }
+
+  int _pinCodeLogin3 = 0;
+  int get pinCodeLogin3 => _pinCodeLogin3;
+  set pinCodeLogin3(int value) {
+    _pinCodeLogin3 = value;
+  }
+
+  int _pinCodeLogin4 = 0;
+  int get pinCodeLogin4 => _pinCodeLogin4;
+  set pinCodeLogin4(int value) {
+    _pinCodeLogin4 = value;
+  }
 }
