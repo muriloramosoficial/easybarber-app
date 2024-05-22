@@ -31,4 +31,28 @@ class FFAppState extends ChangeNotifier {
   set LoggedSessionUserId(String value) {
     _LoggedSessionUserId = value;
   }
+
+  bool _BarbeariaVinculada = false;
+  bool get BarbeariaVinculada => _BarbeariaVinculada;
+  set BarbeariaVinculada(bool value) {
+    _BarbeariaVinculada = value;
+  }
+
+  bool _CreditCardVinculed = false;
+  bool get CreditCardVinculed => _CreditCardVinculed;
+  set CreditCardVinculed(bool value) {
+    _CreditCardVinculed = value;
+  }
+
+  bool _AgendamentoDashboard = false;
+  bool get AgendamentoDashboard => _AgendamentoDashboard;
+  set AgendamentoDashboard(bool value) {
+    _AgendamentoDashboard = value;
+  }
+
+  bool _CardTransation = false;
+  bool get CardTransation => _CardTransation;
+  set CardTransation(bool value) {
+    _CardTransation = value;
+  }
 }

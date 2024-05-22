@@ -1,5 +1,5 @@
-import '/components/credit_card_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/pages/user_info/components/credit_card/credit_card_widget.dart';
 import 'credit_card_register_widget.dart' show CreditCardRegisterWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';

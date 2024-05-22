@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -73,18 +72,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const DashboardWidget() : const PreSignInWidget(),
+          appStateNotifier.loggedIn ? const DashboardWidget() : const LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const DashboardWidget() : const PreSignInWidget(),
+              appStateNotifier.loggedIn ? const DashboardWidget() : const LoginPageWidget(),
         ),
         FFRoute(
-          name: 'preSignIn',
-          path: '/preSignIn',
-          builder: (context, params) => const PreSignInWidget(),
+          name: 'loginPage',
+          path: '/loginPage',
+          builder: (context, params) => const LoginPageWidget(),
         ),
         FFRoute(
           name: 'dashboard',
@@ -95,6 +94,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreditCardRegister',
           path: '/creditCardRegister',
           builder: (context, params) => const CreditCardRegisterWidget(),
+        ),
+        FFRoute(
+          name: 'agendamento',
+          path: '/agendamento',
+          builder: (context, params) => const AgendamentoWidget(),
+        ),
+        FFRoute(
+          name: 'loginCodeVerify',
+          path: '/loginCodeVerify',
+          builder: (context, params) => const LoginCodeVerifyWidget(),
+        ),
+        FFRoute(
+          name: 'ProfilePage',
+          path: '/profilePage',
+          builder: (context, params) => const ProfilePageWidget(),
+        ),
+        FFRoute(
+          name: 'notificationsPage',
+          path: '/notificationsPage',
+          builder: (context, params) => const NotificationsPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -263,7 +282,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/preSignIn';
+            return '/loginPage';
           }
           return null;
         },
@@ -277,17 +296,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: const Color(0xFFEBE7DC),
+                      child: Image.asset(
+                        'assets/images/Design_sem_nome_(1).png',
+                        fit: BoxFit.contain,
                       ),
-                    ),
-                  ),
-                )
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;

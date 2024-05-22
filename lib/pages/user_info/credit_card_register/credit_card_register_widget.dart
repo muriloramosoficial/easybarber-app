@@ -1,8 +1,8 @@
-import '/components/credit_card_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/pages/user_info/components/credit_card/credit_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'credit_card_register_model.dart';
 export 'credit_card_register_model.dart';
@@ -92,7 +92,7 @@ class _CreditCardRegisterWidgetState extends State<CreditCardRegisterWidget> {
                 alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Container(
                   width: double.infinity,
-                  height: 383.0,
+                  height: 396.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     boxShadow: const [
@@ -108,8 +108,8 @@ class _CreditCardRegisterWidgetState extends State<CreditCardRegisterWidget> {
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
-                      topLeft: Radius.circular(50.0),
-                      topRight: Radius.circular(50.0),
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(30.0),
                     ),
                   ),
                   child: Form(
@@ -706,8 +706,8 @@ class _CreditCardRegisterWidgetState extends State<CreditCardRegisterWidget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          setState(() {});
                                         },
                                         text: 'SALVAR',
                                         options: FFButtonOptions(

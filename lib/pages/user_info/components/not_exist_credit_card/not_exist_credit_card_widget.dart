@@ -326,6 +326,11 @@ class _NotExistCreditCardWidgetState extends State<NotExistCreditCardWidget> {
                           ),
                     ),
                   ),
+                  Icon(
+                    Icons.add,
+                    color: FlutterFlowTheme.of(context).primaryBackground,
+                    size: 24.0,
+                  ),
                 ],
               ),
             ),
