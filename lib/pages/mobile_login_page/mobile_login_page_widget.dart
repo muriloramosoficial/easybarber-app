@@ -6,18 +6,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'login_page_model.dart';
-export 'login_page_model.dart';
+import 'mobile_login_page_model.dart';
+export 'mobile_login_page_model.dart';
 
-class LoginPageWidget extends StatefulWidget {
-  const LoginPageWidget({super.key});
+class MobileLoginPageWidget extends StatefulWidget {
+  const MobileLoginPageWidget({super.key});
 
   @override
-  State<LoginPageWidget> createState() => _LoginPageWidgetState();
+  State<MobileLoginPageWidget> createState() => _MobileLoginPageWidgetState();
 }
 
-class _LoginPageWidgetState extends State<LoginPageWidget> {
-  late LoginPageModel _model;
+class _MobileLoginPageWidgetState extends State<MobileLoginPageWidget> {
+  late MobileLoginPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   late StreamSubscription<bool> _keyboardVisibilitySubscription;
@@ -26,7 +26,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginPageModel());
+    _model = createModel(context, () => MobileLoginPageModel());
 
     if (!isWeb) {
       _keyboardVisibilitySubscription =
@@ -74,7 +74,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             ),
           );
         }
-        final loginPageViaCEPResponse = snapshot.data!;
+        final mobileLoginPageViaCEPResponse = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -233,7 +233,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   _model.textFieldFocusNode,
                                               onFieldSubmitted: (_) async {
                                                 context.goNamed(
-                                                  'loginCodeVerify',
+                                                  'MobileLoginVerificationPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         const TransitionInfo(
@@ -351,7 +351,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
-                                                      'loginCodeVerify');
+                                                      'MobileLoginVerificationPage');
                                                 },
                                                 text: 'ACESSAR',
                                                 options: FFButtonOptions(

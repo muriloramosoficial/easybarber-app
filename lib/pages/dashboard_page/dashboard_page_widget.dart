@@ -2,32 +2,32 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/agendamento/card_agendamento_dashboard/card_agendamento_dashboard_widget.dart';
-import '/pages/agendamento/card_agendamentos_dashboard_not_exist/card_agendamentos_dashboard_not_exist_widget.dart';
-import '/pages/transations/card_transation_dashboard/card_transation_dashboard_widget.dart';
-import '/pages/transations/card_transation_dashboard_not_exist/card_transation_dashboard_not_exist_widget.dart';
-import '/pages/user_dashboard/card_barbearia_dashboard/card_barbearia_dashboard_widget.dart';
-import '/pages/user_dashboard/card_barbearia_dashboard_not_exist/card_barbearia_dashboard_not_exist_widget.dart';
-import '/pages/user_info/components/credit_card/credit_card_widget.dart';
-import '/pages/user_info/components/not_exist_credit_card/not_exist_credit_card_widget.dart';
+import '/pages/card_agendamento_dashboard/card_agendamento_dashboard_widget.dart';
+import '/pages/card_agendamentos_dashboard_not_exist/card_agendamentos_dashboard_not_exist_widget.dart';
+import '/pages/card_barbearia_dashboard/card_barbearia_dashboard_widget.dart';
+import '/pages/card_barbearia_dashboard_not_exist/card_barbearia_dashboard_not_exist_widget.dart';
+import '/pages/card_transation_dashboard/card_transation_dashboard_widget.dart';
+import '/pages/card_transation_dashboard_not_exist/card_transation_dashboard_not_exist_widget.dart';
+import '/pages/credit_card/credit_card_widget.dart';
+import '/pages/not_exist_credit_card/not_exist_credit_card_widget.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'dashboard_model.dart';
-export 'dashboard_model.dart';
+import 'dashboard_page_model.dart';
+export 'dashboard_page_model.dart';
 
-class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({super.key});
+class DashboardPageWidget extends StatefulWidget {
+  const DashboardPageWidget({super.key});
 
   @override
-  State<DashboardWidget> createState() => _DashboardWidgetState();
+  State<DashboardPageWidget> createState() => _DashboardPageWidgetState();
 }
 
-class _DashboardWidgetState extends State<DashboardWidget>
+class _DashboardPageWidgetState extends State<DashboardPageWidget>
     with TickerProviderStateMixin {
-  late DashboardModel _model;
+  late DashboardPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -36,7 +36,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DashboardModel());
+    _model = createModel(context, () => DashboardPageModel());
 
     animationsMap.addAll({
       'circleImageOnPageLoadAnimation': AnimationInfo(
@@ -170,7 +170,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'notificationsPage',
+                                      'NotificationsPage',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
@@ -490,9 +490,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     alignment:
                                                         const AlignmentDirectional(
                                                             0.0, 0.0),
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .calendarPlus,
+                                                    child: Icon(
+                                                      Icons.security,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)

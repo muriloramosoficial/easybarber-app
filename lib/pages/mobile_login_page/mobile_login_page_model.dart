@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'login_page_widget.dart' show LoginPageWidget;
+import 'mobile_login_page_widget.dart' show MobileLoginPageWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
+class MobileLoginPageModel extends FlutterFlowModel<MobileLoginPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

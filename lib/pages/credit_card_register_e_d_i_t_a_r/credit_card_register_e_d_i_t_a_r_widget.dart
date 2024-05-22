@@ -2,28 +2,29 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/user_info/components/credit_card/credit_card_widget.dart';
+import '/pages/credit_card/credit_card_widget.dart';
 import 'package:flutter/material.dart';
-import 'credit_card_register_model.dart';
-export 'credit_card_register_model.dart';
+import 'credit_card_register_e_d_i_t_a_r_model.dart';
+export 'credit_card_register_e_d_i_t_a_r_model.dart';
 
-class CreditCardRegisterWidget extends StatefulWidget {
-  const CreditCardRegisterWidget({super.key});
+class CreditCardRegisterEDITARWidget extends StatefulWidget {
+  const CreditCardRegisterEDITARWidget({super.key});
 
   @override
-  State<CreditCardRegisterWidget> createState() =>
-      _CreditCardRegisterWidgetState();
+  State<CreditCardRegisterEDITARWidget> createState() =>
+      _CreditCardRegisterEDITARWidgetState();
 }
 
-class _CreditCardRegisterWidgetState extends State<CreditCardRegisterWidget> {
-  late CreditCardRegisterModel _model;
+class _CreditCardRegisterEDITARWidgetState
+    extends State<CreditCardRegisterEDITARWidget> {
+  late CreditCardRegisterEDITARModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreditCardRegisterModel());
+    _model = createModel(context, () => CreditCardRegisterEDITARModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();

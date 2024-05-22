@@ -1,11 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/user_info/components/credit_card/credit_card_widget.dart';
-import 'credit_card_register_widget.dart' show CreditCardRegisterWidget;
+import '/pages/credit_card/credit_card_widget.dart';
+import 'credit_card_register_e_d_i_t_a_r_widget.dart'
+    show CreditCardRegisterEDITARWidget;
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class CreditCardRegisterModel
-    extends FlutterFlowModel<CreditCardRegisterWidget> {
+class CreditCardRegisterEDITARModel
+    extends FlutterFlowModel<CreditCardRegisterEDITARWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

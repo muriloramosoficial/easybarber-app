@@ -5,18 +5,20 @@ import 'dart:async';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'login_code_verify_model.dart';
-export 'login_code_verify_model.dart';
+import 'mobile_login_verification_page_model.dart';
+export 'mobile_login_verification_page_model.dart';
 
-class LoginCodeVerifyWidget extends StatefulWidget {
-  const LoginCodeVerifyWidget({super.key});
+class MobileLoginVerificationPageWidget extends StatefulWidget {
+  const MobileLoginVerificationPageWidget({super.key});
 
   @override
-  State<LoginCodeVerifyWidget> createState() => _LoginCodeVerifyWidgetState();
+  State<MobileLoginVerificationPageWidget> createState() =>
+      _MobileLoginVerificationPageWidgetState();
 }
 
-class _LoginCodeVerifyWidgetState extends State<LoginCodeVerifyWidget> {
-  late LoginCodeVerifyModel _model;
+class _MobileLoginVerificationPageWidgetState
+    extends State<MobileLoginVerificationPageWidget> {
+  late MobileLoginVerificationPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   late StreamSubscription<bool> _keyboardVisibilitySubscription;
@@ -25,7 +27,7 @@ class _LoginCodeVerifyWidgetState extends State<LoginCodeVerifyWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginCodeVerifyModel());
+    _model = createModel(context, () => MobileLoginVerificationPageModel());
 
     if (!isWeb) {
       _keyboardVisibilitySubscription =
@@ -263,7 +265,7 @@ class _LoginCodeVerifyWidgetState extends State<LoginCodeVerifyWidget> {
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 context.pushNamed(
-                                                  'dashboard',
+                                                  'DashboardPage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
                                                         const TransitionInfo(

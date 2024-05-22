@@ -1,8 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'login_code_verify_widget.dart' show LoginCodeVerifyWidget;
+import 'mobile_login_verification_page_widget.dart'
+    show MobileLoginVerificationPageWidget;
 import 'package:flutter/material.dart';
 
-class LoginCodeVerifyModel extends FlutterFlowModel<LoginCodeVerifyWidget> {
+class MobileLoginVerificationPageModel
+    extends FlutterFlowModel<MobileLoginVerificationPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for PinCode widget.

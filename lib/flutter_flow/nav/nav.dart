@@ -71,29 +71,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const DashboardWidget() : const LoginPageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? const DashboardPageWidget()
+          : const MobileLoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? const DashboardWidget() : const LoginPageWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? const DashboardPageWidget()
+              : const MobileLoginPageWidget(),
         ),
         FFRoute(
-          name: 'loginPage',
-          path: '/loginPage',
-          builder: (context, params) => const LoginPageWidget(),
+          name: 'MobileLoginPage',
+          path: '/mobileLoginPage',
+          builder: (context, params) => const MobileLoginPageWidget(),
         ),
         FFRoute(
-          name: 'dashboard',
-          path: '/dashboard',
-          builder: (context, params) => const DashboardWidget(),
+          name: 'DashboardPage',
+          path: '/dashboardPage',
+          builder: (context, params) => const DashboardPageWidget(),
         ),
         FFRoute(
-          name: 'CreditCardRegister',
-          path: '/creditCardRegister',
-          builder: (context, params) => const CreditCardRegisterWidget(),
+          name: 'CreditCardRegisterEDITAR',
+          path: '/creditCardRegisterEDITAR',
+          builder: (context, params) => const CreditCardRegisterEDITARWidget(),
         ),
         FFRoute(
           name: 'agendamento',
@@ -101,9 +103,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AgendamentoWidget(),
         ),
         FFRoute(
-          name: 'loginCodeVerify',
-          path: '/loginCodeVerify',
-          builder: (context, params) => const LoginCodeVerifyWidget(),
+          name: 'MobileLoginVerificationPage',
+          path: '/mobileLoginVerificationPage',
+          builder: (context, params) => const MobileLoginVerificationPageWidget(),
         ),
         FFRoute(
           name: 'ProfilePage',
@@ -111,7 +113,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ProfilePageWidget(),
         ),
         FFRoute(
-          name: 'notificationsPage',
+          name: 'NotificationsPage',
           path: '/notificationsPage',
           builder: (context, params) => const NotificationsPageWidget(),
         )
@@ -282,7 +284,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/loginPage';
+            return '/mobileLoginPage';
           }
           return null;
         },
